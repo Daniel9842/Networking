@@ -14,7 +14,7 @@ public class URLReader {
 	 * @throws Exception
 	 */
 	public static void main(String[] args) throws Exception {
-		URL url = new URL(args[0]);
+		URL url = new URL("http://www.google.com/");
 		String data = "";
 		try (BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()))) {
 			String inputLine = null;
@@ -32,7 +32,7 @@ public class URLReader {
 	 */
 	public static void WriteFile(String data) {
 		try {
-            PrintWriter writer = new PrintWriter("./resultado.html", "UTF-8");
+            PrintWriter writer = new PrintWriter("./TestExercise2/resultado.html", "UTF-8");
             writer.println(data);
             writer.close();
         } catch (Exception e) {

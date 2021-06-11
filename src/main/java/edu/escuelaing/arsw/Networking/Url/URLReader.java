@@ -14,7 +14,7 @@ public class URLReader {
 	 * @throws Exception
 	 */
 	public static void main(String[] args) throws Exception {
-		URL url = new URL("http://www.google.com/");
+		URL url = new URL(args[0]);
 		String data = "";
 		try (BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()))) {
 			String inputLine = null;

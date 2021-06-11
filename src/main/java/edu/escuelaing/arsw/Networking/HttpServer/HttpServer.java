@@ -12,20 +12,39 @@ import java.io.*;
 
 //Code implemented in class with the teacher
 
+/**
+ * this class creates a server that returns html files and images
+ * @author Daniel Santiago Ducuara Ardila
+ *
+ */
 public class HttpServer {
+	
 	private static HttpServer _instance = new HttpServer();
-
+	/**
+	 * constructor of the httpserver class
+	 */
 	private HttpServer() {
 	}
-
+	/**
+	 * this method creates an instance of httpserver
+	 * @return a variable of type httpserver
+	 */
 	private static HttpServer getInstance() {
 		return _instance;
 	}
-
+	/**
+	 * this method orders the execution of starting the server
+	 * @param args
+	 * @throws IOException
+	 */
 	public static void main(String[] args) throws IOException {
 		HttpServer.getInstance().startServer(args);
 	}
-
+	/**
+	 * this method starts the connection to the server
+	 * @param args
+	 * @throws IOException
+	 */
 	public void startServer(String[] args) throws IOException {
 		ServerSocket serverSocket = null;
 		try {
@@ -48,7 +67,11 @@ public class HttpServer {
 		}
 		serverSocket.close();
 	}
-
+	/**
+	 * this method makes a request to the server
+	 * @param clientSocket is the connection to the server
+	 * @throws IOException
+	 */
 	public void processRequest(Socket clientSocket) throws IOException {
 		PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
 		BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
@@ -79,7 +102,11 @@ public class HttpServer {
 		in.close();
 		clientSocket.close();
 	}
-	
+	/**
+	 * this method creates a response with the data from the web page
+	 * @param path the website address
+	 * @return a string with the page content
+	 */
 	public String createTextResponse(String path) {
 		String type = "text/html";
 		if(path.endsWith(".css")) {

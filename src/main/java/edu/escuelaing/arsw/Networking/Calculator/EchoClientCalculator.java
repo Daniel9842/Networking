@@ -3,11 +3,21 @@ package edu.escuelaing.arsw.Networking.Calculator;
 import java.io.*;
 import java.net.*;
 
-//parte del código realizado en clase con el profesor 
+//Code implemented in class with the teacher 
 
+/**
+ * this class is the calculator client that will ask the server for a request,the request will be to perform a trigonometric function.
+ * @author Daniel Santiago Ducuara Ardila
+ *
+ */
 public class EchoClientCalculator {
+	
+	/**
+	 * This method creates the link bound to port 35000 to connect to the server and sends the requests to the server
+	 * @param args 
+	 * @throws IOException
+	 */
 	public static void main(String[] args) throws IOException {
-
 		Socket echoSocket = null;
 		PrintWriter out = null;
 		BufferedReader in = null;
@@ -24,7 +34,7 @@ public class EchoClientCalculator {
 		}
 		BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in));
 		String userInput;
-		System.out.println("Por favor digite un número y presione Enter\n");
+		System.out.println("Por favor digite un número o tipo de función y presione Enter\n");
 		while ((userInput = stdIn.readLine()) != null) {
 			out.println(userInput);
 			System.out.println("echo: " + in.readLine());

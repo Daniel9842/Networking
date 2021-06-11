@@ -3,9 +3,18 @@ package edu.escuelaing.arsw.Networking.Square;
 import java.net.*;
 import java.io.*;
 
-//parte del código realizado en clase con el profesor 
-
+//Code implemented in class with the teacher 
+/**
+ * this class is the Square server that will respond to a request from the client,the answer will be the square of a number.
+ * @author Daniel Santiago Ducuara Ardila
+ *
+ */
 public class EchoServerSquare {
+	/**
+	 * This method creates the link linked to port 35000 to connect with the client and reads the requests made by the client.
+	 * @param args
+	 * @throws IOException
+	 */
 	public static void main(String[] args) throws IOException {
 		ServerSocket serverSocket = null;
 		try {
@@ -38,5 +47,7 @@ public class EchoServerSquare {
 		clientSocket.close();
 		serverSocket.close();
 	}
+	
+	
 }
 

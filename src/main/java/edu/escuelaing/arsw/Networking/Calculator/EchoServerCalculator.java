@@ -3,9 +3,20 @@ package edu.escuelaing.arsw.Networking.Calculator;
 import java.net.*;
 import java.io.*;
 
-//parte del código realizado en clase con el profesor 
+//Code implemented in class with the teacher 
 
+/**
+ * this class is the calculator server that will respond to a request from the client,the answer will be to perform a trigonometric function
+ * @author Daniel Santiago Ducuara Ardila
+ *
+ */
 public class EchoServerCalculator {
+	
+	/**
+	 * This method creates the link linked to port 35000 to connect with the client and reads the requests made by the client.
+	 * @param args 
+	 * @throws IOException
+	 */
 	public static void main(String[] args) throws IOException {
 		ServerSocket serverSocket = null;
 		try {
@@ -24,23 +35,10 @@ public class EchoServerCalculator {
 		PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
 		BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 		String inputLine, outputLine;
-		String operation = "fun:cos";
 		while ((inputLine = in.readLine()) != null) {
 			if (inputLine.equals("Bye.")) break;
 			System.out.println("Mensaje recibido: " + inputLine);
-			outputLine = "";
-			if(inputLine.equals("fun:sin") || inputLine.equals("fun:tan") || inputLine.equals("fun:cos")) {
-				operation = inputLine;
-				outputLine = "Realizando cambio de operación";
-			}else {
-				if(operation.equals("fun:cos")) {
-					outputLine = String.valueOf(Math.cos(Double.parseDouble(inputLine)));
-				}else if(operation.equals("fun:sin")) {
-					outputLine = String.valueOf(Math.sin(Double.parseDouble(inputLine)));
-				}else if(operation.equals("fun:tan")) {
-					outputLine = String.valueOf(Math.tan(Double.parseDouble(inputLine)));
-				}
-			}
+			outputLine = calculateFunctions(inputLine);
 			out.println(outputLine);
 		}
 		System.out.println("Cerrando el servidor");
@@ -48,6 +46,29 @@ public class EchoServerCalculator {
 		in.close();
 		clientSocket.close();
 		serverSocket.close();
+	}
+	
+	/**
+	 * This method is responsible for making an operation change or performing the trigonometric operation
+	 * @param inputLine are the numbers or functions requested by the server.
+	 * @return the result of the trigonometric operation
+	 */
+	public static String calculateFunctions(String inputLine) {
+		String operation = "fun:cos";
+		String outputLine="";
+		if(inputLine.equals("fun:sin") || inputLine.equals("fun:tan") || inputLine.equals("fun:cos")) {
+			operation = inputLine;
+			outputLine = "Realizando cambio de operación";
+		}else {
+			if(operation.equals("fun:cos")) {
+				outputLine = String.valueOf(Math.cos(Double.parseDouble(inputLine)));
+			}else if(operation.equals("fun:sin")) {
+				outputLine = String.valueOf(Math.sin(Double.parseDouble(inputLine)));
+			}else if(operation.equals("fun:tan")) {
+				outputLine = String.valueOf(Math.tan(Double.parseDouble(inputLine)));
+			}
+		}
+		return outputLine;
 	}
 }
 

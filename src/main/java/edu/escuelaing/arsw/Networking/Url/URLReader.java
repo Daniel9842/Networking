@@ -32,7 +32,7 @@ public class URLReader {
 	 */
 	public static void WriteFile(String data) {
 		try {
-            PrintWriter writer = new PrintWriter("./TestExercise2/resultado.html", "UTF-8");
+            PrintWriter writer = new PrintWriter("./resultado.html", "UTF-8");
             writer.println(data);
             writer.close();
         } catch (Exception e) {

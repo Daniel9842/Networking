@@ -32,14 +32,11 @@ public class EchoServerSquare {
 		}
 		PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
 		BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-		String inputLine, outputLine;
+		String inputLine;
 		while ((inputLine = in.readLine()) != null) {
 			if (inputLine.equals("Bye.")) break;
 			System.out.println("Mensaje recibido: " + inputLine);
-			int ResultOperation = Integer.parseInt(inputLine) * Integer.parseInt(inputLine);
-			outputLine = "Respuesta desde servidor: " + Integer.toString(ResultOperation);
-			;
-			out.println(outputLine);
+			out.println(calculateSquare(inputLine));
 		}
 		System.out.println("Cerrando el servidor");
 		out.close();
@@ -47,7 +44,17 @@ public class EchoServerSquare {
 		clientSocket.close();
 		serverSocket.close();
 	}
-	
+	/**
+	 * this method obtains the square of a number
+	 * @param inputLine is the number to which sent from the client
+	 * @return the number squared
+	 */
+	public static String calculateSquare(String inputLine) {
+		String outputLine="";
+		int ResultOperation = Integer.parseInt(inputLine) * Integer.parseInt(inputLine);
+		outputLine = Integer.toString(ResultOperation);
+		return outputLine;
+	}
 	
 }
 

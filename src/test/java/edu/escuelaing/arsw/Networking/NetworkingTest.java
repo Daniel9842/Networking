@@ -69,7 +69,7 @@ public class NetworkingTest
     }
     /**
      * to verify this test you must verify that a result .html is created in the main folder of this project
-     * @throws The class Exception and its subclasses are a form of Throwable that indicates conditions that a reasonable application might want to catch.
+     * @throws Exception The class Exception and its subclasses are a form of Throwable that indicates conditions that a reasonable application might want to catch.
      */
     public void testURLReader() throws Exception 
     {
@@ -79,7 +79,7 @@ public class NetworkingTest
     }
     /**
      * this test checks the return of all 8 methods in urlscanner
-     * @throws The class Exception and its subclasses are a form of Throwable that indicates conditions that a reasonable application might want to catch.
+     * @throws Exception The class Exception and its subclasses are a form of Throwable that indicates conditions that a reasonable application might want to catch.
      */
     public void testURLScanner() throws Exception 
     {
@@ -92,7 +92,7 @@ public class NetworkingTest
     	    	+"path: /publicaciones.pdf"
     	    	+"query: val=456r=78"
     	    	+"file: /publicaciones.pdf?val=456r=78"
-    	    	+"ref: publicaciones",urlScanner.MethodsValue(array[0]));
+    	    	+"ref: publicaciones",urlScanner.methodsValue(array[0]));
     	
     }
 }

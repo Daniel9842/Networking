@@ -35,7 +35,7 @@ public class HttpServer {
 	/**
 	 * this method orders the execution of starting the server
 	 * @param args server variable
-	 * @throws IOException
+	 * @throws IOException Signals that an I/O exception of some sort has occurred. This class is the general class of exceptions produced by failed or interrupted I/O operations.
 	 */
 	public static void main(String[] args) throws IOException {
 		HttpServer.getInstance().startServer(args);
@@ -43,7 +43,7 @@ public class HttpServer {
 	/**
 	 * this method starts the connection to the server
 	 * @param args server variable
-	 * @throws IOException
+	 * @throws IOException Signals that an I/O exception of some sort has occurred. This class is the general class of exceptions produced by failed or interrupted I/O operations.
 	 */
 	public void startServer(String[] args) throws IOException {
 		ServerSocket serverSocket = null;
@@ -70,7 +70,7 @@ public class HttpServer {
 	/**
 	 * this method makes a request to the server
 	 * @param clientSocket is the connection to the server
-	 * @throws IOException
+	 * @throws IOException Signals that an I/O exception of some sort has occurred. This class is the general class of exceptions produced by failed or interrupted I/O operations.
 	 */
 	public void processRequest(Socket clientSocket) throws IOException {
 		PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);

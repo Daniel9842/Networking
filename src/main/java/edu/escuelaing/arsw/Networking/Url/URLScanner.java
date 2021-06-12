@@ -15,10 +15,15 @@ public class URLScanner {
 	 */
 	public static void main(String[] args) throws MalformedURLException {
 		
-		System.out.println(MethodsValue(args[0]));
+		System.out.println(methodsValue(args[0]));
 	}
-	
-	public static String MethodsValue(String url) throws MalformedURLException {
+	/**
+	 * this method returns the 8 methods of url information in a string
+	 * @param url Thrown to indicate that a malformed URL has occurred.
+	 * @return a string with the 8 methods
+	 * @throws MalformedURLException Thrown to indicate that a malformed URL has occurred.
+	 */
+	public static String methodsValue(String url) throws MalformedURLException {
 		URL personalSite = new URL(url);
 		return 	"ref: "+personalSite.getProtocol()
 		+"authority: "+personalSite.getAuthority()

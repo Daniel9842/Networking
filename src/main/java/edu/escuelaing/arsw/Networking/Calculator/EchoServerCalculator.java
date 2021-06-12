@@ -11,7 +11,7 @@ import java.io.*;
  *
  */
 public class EchoServerCalculator {
-	//this variable stores the type of function
+	
 	public static String operation = "fun:cos";
 	/**
 	 * This method creates the link linked to port 35000 to connect with the client and reads the requests made by the client.

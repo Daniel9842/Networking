@@ -69,7 +69,7 @@ public class NetworkingTest
     }
     /**
      * to verify this test you must verify that a result .html is created in the main folder of this project
-     * @throws Exception when calling a main method
+     * @throws The class Exception and its subclasses are a form of Throwable that indicates conditions that a reasonable application might want to catch.
      */
     public void testURLReader() throws Exception 
     {
@@ -79,7 +79,7 @@ public class NetworkingTest
     }
     /**
      * this test checks the return of all 8 methods in urlscanner
-     * @throws Exception when calling a main method
+     * @throws The class Exception and its subclasses are a form of Throwable that indicates conditions that a reasonable application might want to catch.
      */
     public void testURLScanner() throws Exception 
     {

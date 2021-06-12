@@ -69,7 +69,7 @@ public class NetworkingTest
     }
     /**
      * to verify this test you must verify that a result .html is created in the main folder of this project
-     * @throws Exception
+     * @throws Exception when calling a main method
      */
     public void testURLReader() throws Exception 
     {
@@ -79,7 +79,7 @@ public class NetworkingTest
     }
     /**
      * this test checks the return of all 8 methods in urlscanner
-     * @throws Exception
+     * @throws Exception when calling a main method
      */
     public void testURLScanner() throws Exception 
     {

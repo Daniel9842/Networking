@@ -6,6 +6,7 @@ import java.util.List;
 import edu.escuelaing.arsw.Networking.Calculator.EchoServerCalculator;
 import edu.escuelaing.arsw.Networking.Square.EchoServerSquare;
 import edu.escuelaing.arsw.Networking.Url.URLReader;
+import edu.escuelaing.arsw.Networking.Url.URLScanner;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -77,5 +78,18 @@ public class NetworkingTest
     	urlReader.main(array);
     }
     
-    
+    public void testURLScanner() throws Exception 
+    {
+    	URLScanner urlScanner = new URLScanner();
+    	String[] array = {"http://ldbn.escuelaing.edu.co:80/publicaciones.pdf?val=456r=78#publicaciones"};
+    	assertEquals("ref: http"
+    	    	+"authority: ldbn.escuelaing.edu.co:80"
+    	    	+"host: ldbn.escuelaing.edu.co"
+    	    	+"port: 80"
+    	    	+"path: /publicaciones.pdf"
+    	    	+"query: val=456r=78"
+    	    	+"file: /publicaciones.pdf?val=456r=78"
+    	    	+"ref: publicaciones",urlScanner.MethodsValue(array[0]));
+    	
+    }
 }

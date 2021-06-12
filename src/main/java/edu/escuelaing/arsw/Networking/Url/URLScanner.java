@@ -14,16 +14,20 @@ public class URLScanner {
 	 * @throws MalformedURLException
 	 */
 	public static void main(String[] args) throws MalformedURLException {
-		URL personalSite = new URL(args[0]);
 		
-		System.out.println("ref: "+personalSite.getProtocol());
-		System.out.println("authority: "+personalSite.getAuthority());
-		System.out.println("host: "+personalSite.getHost());
-		System.out.println("port: "+personalSite.getPort());
-		System.out.println("path: "+personalSite.getPath());
-		System.out.println("query: "+personalSite.getQuery());
-		System.out.println("file: "+personalSite.getFile());
-		System.out.println("ref: "+personalSite.getRef());
+		System.out.println(MethodsValue(args[0]));
+	}
+	
+	public static String MethodsValue(String url) throws MalformedURLException {
+		URL personalSite = new URL(url);
+		return 	"ref: "+personalSite.getProtocol()
+		+"authority: "+personalSite.getAuthority()
+		+"host: "+personalSite.getHost()
+		+"port: "+personalSite.getPort()
+		+"path: "+personalSite.getPath()
+		+"query: "+personalSite.getQuery()
+		+"file: "+personalSite.getFile()
+		+"ref: "+personalSite.getRef();
 		
 	}
 	

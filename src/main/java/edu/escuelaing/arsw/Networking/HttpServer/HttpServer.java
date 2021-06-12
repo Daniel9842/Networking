@@ -34,7 +34,7 @@ public class HttpServer {
 	}
 	/**
 	 * this method orders the execution of starting the server
-	 * @param args
+	 * @param args server variable
 	 * @throws IOException
 	 */
 	public static void main(String[] args) throws IOException {
@@ -42,7 +42,7 @@ public class HttpServer {
 	}
 	/**
 	 * this method starts the connection to the server
-	 * @param args
+	 * @param args server variable
 	 * @throws IOException
 	 */
 	public void startServer(String[] args) throws IOException {

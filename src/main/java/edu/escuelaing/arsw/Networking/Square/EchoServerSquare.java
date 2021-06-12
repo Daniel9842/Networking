@@ -12,7 +12,7 @@ import java.io.*;
 public class EchoServerSquare {
 	/**
 	 * This method creates the link linked to port 35000 to connect with the client and reads the requests made by the client.
-	 * @param args
+	 * @param args server variable
 	 * @throws IOException Signals that an I/O exception of some sort has occurred. This class is the general class of exceptions produced by failed or interrupted I/O operations.
 	 */
 	public static void main(String[] args) throws IOException {

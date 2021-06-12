@@ -34,7 +34,7 @@ public class EchoClientSquare {
 		}
 		BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in));
 		String userInput;
-		System.out.println("Por favor digite un número entero");
+		System.out.println("Por favor digite un número");
 		while ((userInput = stdIn.readLine()) != null) {
 			out.println(userInput);
 			System.out.println("echo: " + in.readLine());

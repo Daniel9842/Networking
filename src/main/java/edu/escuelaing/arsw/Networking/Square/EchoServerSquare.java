@@ -51,8 +51,8 @@ public class EchoServerSquare {
 	 */
 	public static String calculateSquare(String inputLine) {
 		String outputLine="";
-		int ResultOperation = Integer.parseInt(inputLine) * Integer.parseInt(inputLine);
-		outputLine = Integer.toString(ResultOperation);
+		double ResultOperation = Double.parseDouble(inputLine) * Double.parseDouble(inputLine);
+		outputLine = Double.toString(ResultOperation);
 		return outputLine;
 	}
 	

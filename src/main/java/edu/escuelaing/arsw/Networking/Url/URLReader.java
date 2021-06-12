@@ -8,13 +8,14 @@ import java.net.*;
  *
  */
 public class URLReader {
+	
 	/**
 	 * this method receives a url and obtains the data to save it in a file
 	 * @param args is the url from which you want to obtain the data.
 	 * @throws Exception
 	 */
 	public static void main(String[] args) throws Exception {
-		URL url = new URL(args[0]);
+		URL url = new URL("http://www.google.com/");
 		String data = "";
 		try (BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()))) {
 			String inputLine = null;

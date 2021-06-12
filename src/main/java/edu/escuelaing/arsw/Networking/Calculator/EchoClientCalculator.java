@@ -34,7 +34,7 @@ public class EchoClientCalculator {
 		}
 		BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in));
 		String userInput;
-		System.out.println("Por favor digite un número o tipo de función y presione Enter\n");
+		System.out.println("Por favor digite un número o tipo de función y presione Enter");
 		while ((userInput = stdIn.readLine()) != null) {
 			out.println(userInput);
 			System.out.println("echo: " + in.readLine());

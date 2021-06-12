@@ -2,7 +2,7 @@ package edu.escuelaing.arsw.Networking.Calculator;
 
 import java.net.*;
 import java.io.*;
-
+	
 //Code implemented in class with the teacher 
 
 /**
@@ -11,7 +11,7 @@ import java.io.*;
  *
  */
 public class EchoServerCalculator {
-	
+	public static String operation = "fun:cos";
 	/**
 	 * This method creates the link linked to port 35000 to connect with the client and reads the requests made by the client.
 	 * @param args 
@@ -54,21 +54,30 @@ public class EchoServerCalculator {
 	 * @return the result of the trigonometric operation
 	 */
 	public static String calculateFunctions(String inputLine) {
-		String operation = "fun:cos";
 		String outputLine="";
 		if(inputLine.equals("fun:sin") || inputLine.equals("fun:tan") || inputLine.equals("fun:cos")) {
 			operation = inputLine;
 			outputLine = "Realizando cambio de operación";
 		}else {
 			if(operation.equals("fun:cos")) {
-				outputLine = String.valueOf(Math.cos(Double.parseDouble(inputLine)));
+				outputLine = String.valueOf(Math.cos(Math.toRadians(Double.parseDouble(inputLine))));
 			}else if(operation.equals("fun:sin")) {
-				outputLine = String.valueOf(Math.sin(Double.parseDouble(inputLine)));
+				outputLine = String.valueOf(Math.sin(Math.toRadians(Double.parseDouble(inputLine))));
 			}else if(operation.equals("fun:tan")) {
-				outputLine = String.valueOf(Math.tan(Double.parseDouble(inputLine)));
+				outputLine = String.valueOf(Math.tan(Math.toRadians(Double.parseDouble(inputLine))));
 			}
 		}
 		return outputLine;
+	}
+	/**
+	 * this method was done for testing
+	 * @param operation is the trigonometric function
+	 * @param number in the trigonometric operation
+	 * @return the value of the function
+	 */
+	public static String makeOperation(String operation,String number) {
+		calculateFunctions(operation);
+		return calculateFunctions(number);
 	}
 }
 

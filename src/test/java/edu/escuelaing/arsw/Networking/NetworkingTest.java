@@ -16,44 +16,60 @@ import junit.framework.TestSuite;
 public class NetworkingTest 
     extends TestCase
 {
+	/**
+	 * this test checks the square of a number
+	 */
     public void testSquare() 
     {
     	EchoServerSquare serverSquare = new EchoServerSquare();
         assertEquals(serverSquare.calculateSquare("4"),"16.0");
      
     }
-    
+    /**
+     * this test verifies the cos of a number
+     */
     public void testCalculatorCos() 
     {
     	EchoServerCalculator serverCalculator = new EchoServerCalculator();
         assertEquals(serverCalculator.makeOperation("fun:cos","0"),"1.0");
     }
-    
+    /**
+     * this test verifies the function change in the calculator
+     */
     public void testCalculatorChangeFunctionSin() 
     {
     	EchoServerCalculator serverCalculator = new EchoServerCalculator();
         assertEquals(serverCalculator.calculateFunctions("fun:sin"),"Realizando cambio de operación");
     }
-    
+    /**
+     * this test verifies the sin of a number
+     */
     public void testCalculatorsin() 
     {
     	EchoServerCalculator serverCalculator = new EchoServerCalculator();
         assertEquals(serverCalculator.makeOperation("fun:sin","0"),"0.0");
     }
-    
+    /**
+     * this test verifies the function change in the calculator
+     */
     public void testCalculatorChangeFunctionTan() 
     {
     	EchoServerCalculator serverCalculator = new EchoServerCalculator();
         assertEquals(serverCalculator.calculateFunctions("fun:tan"),"Realizando cambio de operación");
     }
-    
+    /**
+     * this test verifies the tan of a number
+     */
     public void testCalculatorTan() 
     {
     	EchoServerCalculator serverCalculator = new EchoServerCalculator();
     	double pi = Math.PI;
         assertEquals(serverCalculator.makeOperation("fun:tan","0"),"0.0");
     }
-    
+    /**
+     * to verify this test you must verify that a result .html is created in the main folder of this project
+     * @throws Exception
+     */
     public void testURLReader() throws Exception 
     {
     	URLReader urlReader = new URLReader();

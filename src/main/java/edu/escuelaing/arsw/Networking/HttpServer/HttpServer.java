@@ -114,7 +114,7 @@ public class HttpServer {
 		}else if(path.endsWith(".js")) {
 			type = "text/javascript";
 		}
-		Path file = Paths.get("."+path);
+		Path file = Paths.get("./TestHttpServer"+path);
 		Charset charset = Charset.forName("UTF-8");
 		String outmsg="";
 		try(BufferedReader reader = Files.newBufferedReader(file,charset)){

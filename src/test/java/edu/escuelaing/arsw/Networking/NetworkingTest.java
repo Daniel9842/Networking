@@ -77,7 +77,10 @@ public class NetworkingTest
     	String[] array = {"http://www.google.com/"};
     	urlReader.main(array);
     }
-    
+    /**
+     * this test checks the return of all 8 methods in urlscanner
+     * @throws Exception
+     */
     public void testURLScanner() throws Exception 
     {
     	URLScanner urlScanner = new URLScanner();

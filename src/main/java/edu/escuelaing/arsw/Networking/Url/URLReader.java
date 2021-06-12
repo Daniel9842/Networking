@@ -12,7 +12,7 @@ public class URLReader {
 	/**
 	 * this method receives a url and obtains the data to save it in a file
 	 * @param args is the url from which you want to obtain the data.
-	 * @throws Exception
+	 * @throws Exception The class Exception and its subclasses are a form of Throwable that indicates conditions that a reasonable application might want to catch.
 	 */
 	public static void main(String[] args) throws Exception {
 		URL url = new URL("http://www.google.com/");

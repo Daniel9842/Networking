@@ -11,7 +11,7 @@ public class URLScanner {
 	/**
 	 * this method receives the url and prints its information
 	 * @param args is the url from which you want to obtain the information
-	 * @throws MalformedURLException
+	 * @throws MalformedURLException Thrown to indicate that a malformed URL has occurred.
 	 */
 	public static void main(String[] args) throws MalformedURLException {
 		
